@@ -12,7 +12,7 @@
     --jungle-teal:#3569c3;
     --tea-green-2:#3569c3;
 
-    --paper: #cec7b9;
+    --paper: #201f1a;
     --card: #c2bdb4;
     --ink: #3569c3;
     --ink-soft: #3569c3;
@@ -537,14 +537,14 @@
     padding:18px 16px;
     text-align:center;
     margin-bottom:14px;
-    color:var(--paper);
+    color:var(--card);
   }
   .timer-num{
     font-size:38px;
     font-weight:600;
     letter-spacing:1px;
     margin:4px 0 10px;
-    color:var(--paper);
+    color:var(--card);
   }
   .timer-controls{
     display:flex;
@@ -560,19 +560,19 @@
     border-radius:20px;
     font-size:12.5px;
     cursor:pointer;
-    color:var(--paper);
+    color:var(--card);
   }
   .timer-controls button.primary{
-    background:var(--jungle-teal);
+    background:var(--card);
     color:var(--onyx);
-    border-color:var(--jungle-teal);
+    border-color:var(--card);
     font-weight:600;
   }
 
   .loading{
     text-align:center;
     padding:60px 20px;
-    color:var(--ink-soft);
+    color:var(--card);
     font-size:14px;
   }
 </style>
@@ -1212,14 +1212,14 @@ function renderLearn(){
   let html = `
     <p class="section-note">Таймер помидоро: 25 минут работы, затем 5 минут перерыв, после 4-го помидоро - перерыв 15 минут (добавлю кастом потом).</p>
     <div class="timer-box">
-      <div class="sans" style="margin-bottom:2px;font-size:12.5px;color:var(--paper);">${modeLabel(timerMode)}</div>
-      <div class="sans" style="font-size:11px;var(--paper);margin-bottom:2px;">Завершено помидоров: ${state.pomodoroCount}</div>
+      <div class="sans" style="margin-bottom:2px;font-size:12.5px;color:var(--card);">${modeLabel(timerMode)}</div>
+      <div class="sans" style="font-size:11px;var(--card);margin-bottom:2px;">Завершено помидоров: ${state.pomodoroCount}</div>
       <div class="timer-num" id="timerNum">${fmtTime(timerSeconds)}</div>
       <div class="timer-controls">
         <button class="primary" onclick="toggleTimer()">${timerRunning?'пауза':'старт'}</button>
-        <button onclick="timerModeSet('work')" ${timerMode==='work'?'style="border-color:var(--tea-green);color:var(--tea-green)"':''}>работа 25</button>
-        <button onclick="timerModeSet('short')" ${timerMode==='short'?'style="border-color:var(--tea-green);color:var(--tea-green)"':''}>перерыв 5</button>
-        <button onclick="timerModeSet('long')" ${timerMode==='long'?'style="border-color:var(--tea-green);color:var(--tea-green)"':''}>перерыв 15</button>
+        <button onclick="timerModeSet('work')" ${timerMode==='work'?'style="border-color:var(--card);color:var(--card)"':''}>работа 25</button>
+        <button onclick="timerModeSet('short')" ${timerMode==='short'?'style="border-color:var(--card);color:var(--card)"':''}>перерыв 5</button>
+        <button onclick="timerModeSet('long')" ${timerMode==='long'?'style="border-color:var(--card);color:var(--card)"':''}>перерыв 15</button>
       </div>
     </div>
   `;
