@@ -6,84 +6,30 @@
 <title>Картотека</title>
 <style>
   :root{
-    --onyx:#0f110c;
-    --tea-green:#dafeb7;
-    --thistle:#d6c3c9;
-    --jungle-teal:#6b9080;
-    --tea-green-2:#619e45;
-
-    --paper: var(--tea-green-2);
-    --card: var(--tea-green);
-    --ink: var(--onyx);
-    --ink-soft: #dafeb7;
-    --brick: #d16969;
-    --mustard: var(--thistle);
-    --sage: var(--jungle-teal);
-    --line: rgba(1, 10, 1, 0.14);
-    --shadow: 0 1px 0 rgba(15,17,12,0.08);
-    --sidebar-w: 60px;
+    --paper:#EBEAE2;
+    --card:#FBFAF6;
+    --ink:#242321;
+    --ink-soft:#5B5850;
+    --brick:#B8433A;
+    --mustard:#D9A62E;
+    --sage:#6C7A5E;
+    --line:#D7D4C6;
+    --shadow: 0 1px 0 rgba(36,35,33,0.06);
   }
   *{box-sizing:border-box;}
   body{
     margin:0;
-    display:flex;
     background:var(--paper);
+    background-image:
+      radial-gradient(circle at 1px 1px, rgba(36,35,33,0.06) 1px, transparent 0);
+    background-size: 14px 14px;
     color:var(--ink);
     font-family: 'Iowan Old Style','Palatino Linotype',Palatino,Georgia,serif;
     min-height:100vh;
   }
   .sans{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;}
 
-  .sidebar{
-    width:var(--sidebar-w);
-    flex-shrink:0;
-    background:var(--onyx);
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    gap:6px;
-    padding:16px 0;
-    position:sticky;
-    top:0;
-    height:100vh;
-    overflow-y:auto;
-  }
-  .nav-icon{
-    width:38px;height:38px;
-    border-radius:40%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:17px;
-    color:var(--tea-green);
-    opacity:0.5;
-    cursor:pointer;
-    flex-shrink:0;
-  }
-  .nav-icon.active{
-    background:var(--jungle-teal);
-    color:var(--onyx);
-    opacity:1;
-  }
-  .nav-icon:active{opacity:0.85;}
-  .nav-badge{
-    position:absolute;
-    top:-2px; right:-2px;
-    background:var(--thistle);
-    color:var(--onyx);
-    font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
-    font-size:9px;
-    font-weight:700;
-    min-width:15px;
-    height:15px;
-    border-radius:8px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    padding:0 3px;
-  }
-
-  .wrap{flex:1;min-width:0;max-width:560px;margin:0 auto;padding:20px 16px 90px;}
+  .wrap{max-width:520px;margin:0 auto;padding:20px 16px 90px;}
 
   header{margin-bottom:18px;}
   header h1{
@@ -212,8 +158,8 @@
     cursor:pointer;
   }
   .chip:active{background:var(--paper);}
-  .chip.danger{color:var(--brick);border-color:rgba(169,116,138,0.35);}
-  .chip.go{color:var(--sage);border-color:rgba(107,144,128,0.35);}
+  .chip.danger{color:var(--brick);border-color:rgba(184,67,58,0.3);}
+  .chip.go{color:var(--sage);border-color:rgba(108,122,94,0.3);}
 
   .empty{
     text-align:center;
@@ -268,7 +214,7 @@
     background:var(--sage);
     border-color:var(--sage);
   }
-  .steps li .stxt.on{text-decoration:line-through;color:var(--tea-green);}
+  .steps li .stxt.on{text-decoration:line-through;color:var(--ink-soft);}
   .add-step{
     display:flex;
     gap:6px;
@@ -284,7 +230,7 @@
     background:var(--paper);
   }
   .add-step button{
-    border:none;background:var(--line);color:var(--tea-green);
+    border:none;background:var(--line);color:var(--ink);
     padding:0 10px;border-radius:2px;font-size:12px;cursor:pointer;
   }
 
@@ -464,7 +410,7 @@
     font-size:13.5px;
     line-height:1.55;
     resize:vertical;
-    color:var(--tea-green);
+    color:var(--ink);
   }
   .journal-preview{
     font-size:14.5px;
@@ -500,7 +446,7 @@
     border-left:3px solid var(--line);
     margin:6px 0;
     padding-left:10px;
-    color:var(--tea-green);
+    color:var(--ink-soft);
   }
   .journal-preview ul{
     margin:6px 0;
@@ -520,52 +466,48 @@
   .limit-warn{
     font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
     font-size:12px;
-    background:rgba(214,195,201,0.35);
-    border:1px solid rgba(169,116,138,0.4);
-    color:var(--ink);
+    background:rgba(217,166,46,0.15);
+    border:1px solid rgba(217,166,46,0.4);
+    color:#8A6A16;
     padding:8px 10px;
     border-radius:3px;
     margin-bottom:10px;
   }
 
   .timer-box{
-    background:var(--onyx);
-    border:1px solid var(--onyx);
-    border-radius:6px;
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:3px;
     box-shadow:var(--shadow);
-    padding:18px 16px;
+    padding:16px;
     text-align:center;
     margin-bottom:14px;
-    color:var(--tea-green);
   }
   .timer-num{
     font-size:38px;
     font-weight:600;
     letter-spacing:1px;
     margin:4px 0 10px;
-    color:var(--tea-green);
   }
   .timer-controls{
     display:flex;
     gap:8px;
     justify-content:center;
-    flex-wrap:wrap;
     font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
   }
   .timer-controls button{
-    border:1px solid rgba(218,254,183,0.3);
+    border:1px solid var(--line);
     background:transparent;
     padding:7px 14px;
     border-radius:20px;
     font-size:12.5px;
     cursor:pointer;
-    color:var(--tea-green);
+    color:var(--ink);
   }
   .timer-controls button.primary{
-    background:var(--jungle-teal);
-    color:var(--onyx);
-    border-color:var(--jungle-teal);
-    font-weight:600;
+    background:var(--ink);
+    color:var(--card);
+    border-color:var(--ink);
   }
 
   .loading{
@@ -577,7 +519,6 @@
 </style>
 </head>
 <body>
-<div class="sidebar" id="sidebar"></div>
 <div class="wrap" id="app">
   <div class="loading">Открываю картотеку…</div>
 </div>
@@ -988,7 +929,6 @@ function escapeHtml(s){
 
 function render(){
   const app = document.getElementById('app');
-  const sidebar = document.getElementById('sidebar');
   if(!ready){ app.innerHTML = '<div class="loading">Открываю картотеку…</div>'; return; }
 
   const counts = {
@@ -1002,25 +942,14 @@ function render(){
     someday: state.someday.length
   };
 
-  sidebar.innerHTML = [
-    sidebarBtn('inbox','✎','Инбокс',counts.inbox),
-    sidebarBtn('projects','◧','Проекты',counts.projects),
-    sidebarBtn('tasks','✓','Задачи',counts.tasks),
-    sidebarBtn('learn','⏱','Фокус',null),
-    sidebarBtn('habits','◐','Привычки',counts.habits),
-    sidebarBtn('calendar','▦','Календарь',null),
-    sidebarBtn('journal','✒','Дневник',counts.journal),
-    sidebarBtn('someday','◫','Потом',counts.someday),
-  ].join('');
-
   let html = `
     <header>
       <h1>Картотека</h1>
-      <p>Track everything down and sort later</p>
+      <p>Сначала запиши — потом разберёшь</p>
     </header>
 
     <div class="capture">
-      <input id="captureInput" type="text" placeholder="What's on your mind today?" />
+      <input id="captureInput" type="text" placeholder="Что пришло в голову?" />
       <button class="sans" onclick="handleCapture()">Внести</button>
     </div>
 
@@ -1028,6 +957,17 @@ function render(){
       <button onclick="exportData()">⭳ выгрузить данные</button>
       <button onclick="triggerImport()">⭱ загрузить</button>
       <input type="file" id="importFile" accept="application/json" style="display:none" onchange="importData(event)" />
+    </div>
+
+    <div class="tabs sans">
+      ${tabBtn('inbox','Инбокс',counts.inbox)}
+      ${tabBtn('projects','Проекты',counts.projects)}
+      ${tabBtn('tasks','Задачи',counts.tasks)}
+      ${tabBtn('learn','Фокус',null)}
+      ${tabBtn('habits','Привычки',counts.habits)}
+      ${tabBtn('calendar','Календарь',null)}
+      ${tabBtn('journal','Дневник',counts.journal)}
+      ${tabBtn('someday','Потом',counts.someday)}
     </div>
   `;
 
@@ -1068,10 +1008,10 @@ function render(){
   });
 }
 
-function sidebarBtn(id,icon,label,count){
-  const cls = activeTab===id ? 'nav-icon active' : 'nav-icon';
-  const badge = (count) ? `<span class="nav-badge">${count>9?'9+':count}</span>` : '';
-  return `<div class="${cls}" onclick="switchTab('${id}')" title="${label}" style="position:relative;">${icon}${badge}</div>`;
+function tabBtn(id,label,count){
+  const cls = activeTab===id ? 'tab active' : 'tab';
+  const c = (count===null) ? '' : `<span class="count">${count}</span>`;
+  return `<div class="${cls}" onclick="switchTab('${id}')">${label}${c}</div>`;
 }
 
 function handleCapture(){
@@ -1172,16 +1112,15 @@ function renderTasks(){
 function renderLearn(){
   const active = state.projects.filter(p=>p.active);
   let html = `
-    <p class="section-note">Помидоро: 25 минут работы → 5 минут перерыв, каждый 4-й — 15 минут.</p>
+    <p class="section-note">Помидоро: 25 минут работы → 5 минут перерыв, каждый 4-й — 15 минут. Завершено помидоров: ${state.pomodoroCount}</p>
     <div class="timer-box">
-      <div class="sans" style="margin-bottom:2px;font-size:12.5px;color:rgba(218,254,183,0.7);">${modeLabel(timerMode)}</div>
-      <div class="sans" style="font-size:11px;color:rgba(218,254,183,0.55);margin-bottom:2px;">Завершено помидоров: ${state.pomodoroCount}</div>
+      <div class="section-note sans" style="margin-bottom:2px;">${modeLabel(timerMode)}</div>
       <div class="timer-num" id="timerNum">${fmtTime(timerSeconds)}</div>
       <div class="timer-controls">
         <button class="primary" onclick="toggleTimer()">${timerRunning?'пауза':'старт'}</button>
-        <button onclick="timerModeSet('work')" ${timerMode==='work'?'style="border-color:var(--tea-green);color:var(--tea-green)"':''}>работа 25</button>
-        <button onclick="timerModeSet('short')" ${timerMode==='short'?'style="border-color:var(--tea-green);color:var(--tea-green)"':''}>перерыв 5</button>
-        <button onclick="timerModeSet('long')" ${timerMode==='long'?'style="border-color:var(--tea-green);color:var(--tea-green)"':''}>перерыв 15</button>
+        <button onclick="timerModeSet('work')" ${timerMode==='work'?'style="border-color:var(--ink)"':''}>работа 25</button>
+        <button onclick="timerModeSet('short')" ${timerMode==='short'?'style="border-color:var(--ink)"':''}>перерыв 5</button>
+        <button onclick="timerModeSet('long')" ${timerMode==='long'?'style="border-color:var(--ink)"':''}>перерыв 15</button>
       </div>
     </div>
   `;
@@ -1202,8 +1141,7 @@ function renderLearn(){
 
 function renderHabits(){
   let html = `
-    <p class="section-note">Ежедневные привычки отмечаются только тогда,
-       когда ты их выполняешь. Отображается серия при выполнении привычек подряд.</p>
+    <p class="section-note">Ежедневные привычки — отмечай по факту, серия считается только если сегодня отмечено.</p>
     <div class="add-step" style="margin-bottom:14px;">
       <input id="habitInput" type="text" class="sans" placeholder="Новая привычка…" />
       <button class="sans" onclick="handleAddHabit()">Добавить</button>
@@ -1385,7 +1323,7 @@ function renderSomeday(){
   if(state.someday.length===0){
     return `<div class="empty"><span class="big">◫</span>Список «потом» пуст.</div>`;
   }
-  let html = `<p class="section-note">Идеи, до которых пока не дошли руки.</p>`;
+  let html = `<p class="section-note">Идеи, до которых пока не дошли руки — не пропали, просто ждут.</p>`;
   state.someday.forEach(item=>{
     html += `
       <div class="card">
